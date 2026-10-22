@@ -39,12 +39,8 @@ Requirements:
 - **One peptide** (a single bonded molecule). Every residue that is not water or an ion is treated as the peptide (ML region).
 - **Water**: TIP3P, residue name `TIP3` (`HOH` and `WAT` are also recognised).
 - **Ions** (e.g. `SOD`, `CLA`): always treated with MM. They never enter the ML region.
-- **Box**: orthorhombic (cubic recommended), large enough that the shell (6 Å around the peptide) never meets its own periodic image. GTG used a ~4.8 nm cubic box with 3899 waters and 1 Cl⁻.
-- **Force field**: standard CHARMM36m terms only. NBFIX/`CustomNonbondedForce` terms are not supported, and the program stops with an error if it finds them.
-
-No pre-equilibration is required: the program minimises and pre-equilibrates the solvent around the peptide itself (stages 0–1b below).
-
-
+- **Box**: orthorhombic (cubic recommended), large enough that the shell (6 Å around the peptide) never meets its own periodic image.
+- **Force field**: standard CHARMM36m terms only.
 
 # How to execute the program
 
