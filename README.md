@@ -24,8 +24,8 @@ pip install git+https://github.com/general-molecular-simulations/so3lr.git
 
 The program needs three kinds of input:
 
-1. **CHARMM PSF** (`GTG.psf`) of the solvated system
-2. **PDB** (`GTG.pdb`) with starting coordinates and a `CRYST1` record giving the box size
+1. **CHARMM PSF** (`peptide.psf`) of the solvated system
+2. **PDB** (`peptide.pdb`) with starting coordinates and a `CRYST1` record giving the box size
 3. **CHARMM parameter files**: `par_all36m_prot.prm` and `par_water_ions_namd.prm` (CHARMM36m)
 
 The PSF/PDB pair can be built with CHARMM-GUI (Solution Builder) or VMD psfgen.
