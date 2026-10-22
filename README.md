@@ -27,6 +27,22 @@ pip install git+https://github.com/general-molecular-simulations/so3lr.git
 
 # How to prepare the input files
 
+The program needs three kinds of input:
+
+1. **CHARMM PSF** (`GTG.psf`) of the solvated system
+2. **PDB** (`GTG.pdb`) with starting coordinates and a `CRYST1` record giving the box size
+3. **CHARMM parameter files**: `par_all36m_prot.prm` and `par_water_ions_namd.prm` (CHARMM36m)
+
+The PSF/PDB pair can be built with CHARMM-GUI (Solution Builder) or VMD psfgen.
+Requirements:
+
+- **One peptide** (a single bonded molecule). Every residue that is not water or an ion is treated as the peptide (ML region).
+- **Water**: TIP3P, residue name `TIP3` (`HOH` and `WAT` are also recognised).
+- **Ions** (e.g. `SOD`, `CLA`): always treated with MM. They never enter the ML region.
+- **Box**: orthorhombic (cubic recommended), large enough that the shell (6 Å around the peptide) never meets its own periodic image. GTG used a ~4.8 nm cubic box with 3899 waters and 1 Cl⁻.
+- **Force field**: standard CHARMM36m terms only. NBFIX/`CustomNonbondedForce` terms are not supported, and the program stops with an error if it finds them.
+
+No pre-equilibration is required: the program minimises and pre-equilibrates the solvent around the peptide itself (stages 0–1b below).
 
 
 
