@@ -48,7 +48,7 @@ python adaptive_so3lr_mm.py --name peptide --replica 1 \
 The program runs the full protocol: SO3LR relaxation of the peptide, MM
 minimisation and equilibration, NVT warm-up with a time-step ramp, NVT
 equilibration (500 ps), NPT equilibration (500 ps) and NPT production
-(15 ns, 1 fs, 300 K, 1 bar, Langevin friction 10 ps⁻¹, Monte Carlo barostat).
+(15 ns, 1 fs, 300 K, 1 bar, Langevin thermostat, Monte Carlo barostat).
 
 Main options (`python adaptive_so3lr_mm.py --help` lists all):
 
