@@ -43,10 +43,36 @@ Requirements:
 - **Force field**: standard CHARMM36m terms only.
 
 # How to execute the program
+```bash
+python adaptive_so3lr_mm.py --name GTG --replica 1 \
+    --psf GTG.psf --pdb GTG.pdb \
+    --prm par_all36m_prot.prm par_water_ions_namd.prm \
+    --out GTG_rep1 --jax-cache ./jax_cache
+```
 
+The program runs the full protocol: SO3LR relaxation of the peptide, MM
+minimisation and equilibration (including NPT to set the box volume), NVT warm-up
+with a time-step ramp, NVT equilibration (500 ps) and NVT production
+(15 ns, 1 fs, 300 K, Langevin friction 10 ps⁻¹).
 
+Main options (`python adaptive_so3lr_mm.py --help` lists all):
 
+| Option | Default | |
+|---|---|---|
+| `--r-on`, `--r-off` | 3.5, 6.0 Å | inner and outer radius of the switching region |
+| `--temperature` | 300 K | |
+| `--friction` | 10 ps⁻¹ | Langevin friction |
+| `--nvt-steps`, `--prod-steps` | 500 000, 15 000 000 | equilibration and production steps (1 fs) |
+| `--save-every` | 1000 | trajectory frame interval (steps) |
+| `--replica`, `--seed` | 1, 1000 × replica | independent replicas |
 
+Outputs in `--out`:
+
+| File | |
+|---|---|
+| `<name>_rep<r>_prod.dcd` | production trajectory |
+| `<name>_rep<r>_prod.csv` | temperature, SO3LR energy, number of ML waters |
+| `<name>_rep<r>_prod.chk` | OpenMM checkpoint |
 
 # Reference
 ```
