@@ -39,10 +39,10 @@ Requirements:
 
 # How to execute the program
 ```bash
-python adaptive_so3lr_mm.py --name GTG --replica 1 \
-    --psf GTG.psf --pdb GTG.pdb \
+python adaptive_so3lr_mm.py --name peptide --replica 1 \
+    --psf peptide.psf --pdb peptide.pdb \
     --prm par_all36m_prot.prm par_water_ions_namd.prm \
-    --out GTG_rep1 --jax-cache ./jax_cache
+    --out peptide_rep1 --jax-cache ./jax_cache
 ```
 
 The program runs the full protocol: SO3LR relaxation of the peptide, MM
