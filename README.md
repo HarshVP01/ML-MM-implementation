@@ -9,7 +9,6 @@ jax       0.5.3
 jax-md    0.2.27
 ase       3.29.0
 so3lr     0.1.0
-mdtraj    1.11.1
 ```
 
 Example installation:
