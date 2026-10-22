@@ -1,9 +1,6 @@
 # Acronym: [brainstorm]
 
 # lib dependence
-
-Tested on Linux with NVIDIA V100 GPUs (NCI Gadi):
-
 ```
 python    3.12.13
 openmm    8.3.1
