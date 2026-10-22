@@ -7,13 +7,13 @@ Tested on Linux with NVIDIA V100 GPUs (NCI Gadi):
 
 ```
 python    3.12.13
-openmm    8.3.1      (CUDA platform)
+openmm    8.3.1
 numpy     2.4.6
-jax       0.5.3      (GPU build)
+jax       0.5.3
 jax-md    0.2.27
 ase       3.29.0
 so3lr     0.1.0
-mdtraj    1.11.1     (optional: trajectory checks)
+mdtraj    1.11.1
 ```
 
 Example installation:
