@@ -1,7 +1,6 @@
 # Acronym: [brainstorm]
 
 # lib dependence
-## lib dependence
 
 Tested on Linux with NVIDIA V100 GPUs (NCI Gadi):
 
